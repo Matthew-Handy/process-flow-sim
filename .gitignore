@@ -1,0 +1,17 @@
+# Environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Generated output (keep the folders, ignore the contents)
+figures/*
+!figures/.gitkeep
