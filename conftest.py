@@ -1,0 +1,1 @@
+# Marks the project root for pytest, so `from procsim...` resolves in tests.
