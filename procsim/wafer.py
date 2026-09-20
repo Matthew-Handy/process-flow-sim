@@ -33,6 +33,7 @@ class Wafer:
         self.grid[first_substrate_row:, :] = SILICON
 
         self.history = []
+        self.latent_image = None
 
     def __repr__(self):
         return (f"Wafer({self.width_nm:.0f} nm wide, "
