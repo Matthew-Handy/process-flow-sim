@@ -16,6 +16,15 @@ POLYSILICON = 4
 PHOTORESIST = 5
 ALUMINUM    = 6
 
+# Colours were checked for colour-vision deficiency separation rather than
+# chosen by eye. Worst adjacent pair is dE 8.1 under protanopia. The
+# original light blue oxide and light green nitride sat at dE 14.6 for
+# normal vision, below the legibility floor -- and those two films are
+# adjacent in almost every flow here, so they were the ones to fix.
+# Cross-sections also carry hatch texture, so identity never rests on
+# colour alone.
+
+
 @dataclass(frozen=True)
 class Material: 
     """Identity of a material. Deliberately carries no process rates"""
@@ -26,11 +35,11 @@ class Material:
 MATERIALS = {
     VACUUM:         Material(VACUUM,        "vacuum", "#ffffff"),
     SILICON:        Material(SILICON,       "Si",       "#4a4a4a"),
-    SIO2:           Material(SIO2,          "SiO2",     "#7fb3d5"),
-    SI3N4:          Material(SI3N4,         "Si3N4",    "#52be80"),
-    POLYSILICON:    Material(POLYSILICON,   "poly-Si",    "#c0392b"), 
-    PHOTORESIST:    Material(PHOTORESIST,   "resist",     "#f4d03f"),
-    ALUMINUM:       Material(ALUMINUM,      "Al",       "#aeb6bf"),
+    SIO2:           Material(SIO2,          "SiO2",     "#2f6fb0"),
+    SI3N4:          Material(SI3N4,         "Si3N4",    "#4aa564"),
+    POLYSILICON:    Material(POLYSILICON,   "poly-Si",  "#c0392b"), 
+    PHOTORESIST:    Material(PHOTORESIST,   "resist",   "#f4d03f"),
+    ALUMINUM:       Material(ALUMINUM,      "Al",       "#9aa1a8"),
 }
 
 def name_of(material_id: int) -> str:

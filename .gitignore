@@ -15,3 +15,6 @@ __pycache__/
 # Generated output (keep the folders, ignore the contents)
 figures/*
 !figures/.gitkeep
+# the two demo figures are part of the README
+!figures/locos_flow.png
+!figures/locos_final.png
