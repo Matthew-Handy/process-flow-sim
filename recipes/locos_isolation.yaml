@@ -1,0 +1,59 @@
+# LOCOS isolation, the classic local-oxidation flow.
+#
+# A nitride pad masks oxidation over the active areas while thick field
+# oxide grows everywhere else, then the pad is stripped. The finished
+# wafer has recessed oxide isolating bare-silicon device regions.
+
+name: LOCOS isolation
+description: >
+  Pad oxide, nitride hard mask, patterned nitride, field oxidation,
+  nitride strip.
+
+steps:
+  - op: oxidize
+    comment: thin pad oxide to cushion nitride stress on the silicon
+    temperature_c: 900
+    time_min: 20
+    ambient: dry
+
+  - op: deposit
+    comment: nitride hard mask, the oxidation barrier
+    material: nitride
+    thickness_nm: 120
+    rate_nm_s: 2.0
+    time_s: 60
+
+  - op: spin_coat
+    thickness_nm: 400
+
+  - op: expose
+    comment: clear resist over the field, keep it over the active areas
+    dose_mj_cm2: 120
+    clear_regions: [[0, 500], [900, 1500], [1900, 2000]]
+
+  - op: develop
+    dose_to_clear: 50
+    contrast: 3.0
+    tone: positive
+
+  - op: etch
+    comment: open the nitride where the field oxide will grow
+    chemistry: CF4_O2
+    time_min: 2.5
+
+  - op: etch
+    comment: strip the resist
+    chemistry: O2_ash
+    time_min: 2
+
+  - op: oxidize
+    comment: field oxidation, blocked wherever nitride remains
+    temperature_c: 1000
+    time_min: 90
+    ambient: wet
+
+  - op: etch
+    comment: remove the nitride pad, exposing the active areas
+    rates_nm_min: {nitride: 80, sio2: 1}
+    time_min: 3
+    anisotropy: 0.0
