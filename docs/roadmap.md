@@ -2,21 +2,21 @@
 
 Build order. Each step leaves the project in a working, testable state.
 
-| # | Step | Adds |
-|---|------|------|
-| 1 | Wafer + material data structure | The state everything else mutates |
-| 2 | Deposition | Adding material (conformal and directional) |
-| 3 | Thermal oxidation | Deal-Grove kinetics; oxide *consumes* silicon |
-| 4 | Lithography | Resist coat, expose through a mask, develop |
-| 5 | Etching | Removal with rate, selectivity, and directionality |
-| 6 | Ion implantation | Gaussian dopant profile, masked by overlying films |
-| 7 | CMP | Planarization, not just removal |
-| 8 | Recipe engine | Ordered operations loaded from a file |
-| 9 | Cross-section visualization | A picture after every step |
-| 10 | Process variability | Stochastic rates, nonuniformity, tool offsets |
-| 11 | Link to Project 1 | Aerial image from the lithography simulator drives exposure |
-| 12 | Metrology outputs | Thickness, CD, sidewall angle, step height |
-| 13 | Statistics and yield | Monte Carlo over a recipe, spec limits, Cp/Cpk |
+| # | Step | Adds | Status |
+|---|------|------|--------|
+| 1 | Wafer + material data structure | The state everything else mutates | done |
+| 2 | Deposition | Adding material (conformal and directional) | done |
+| 3 | Thermal oxidation | Deal-Grove kinetics; oxide *consumes* silicon | done |
+| 4 | Lithography | Resist coat, expose through a mask, develop | done |
+| 5 | Etching | Removal with rate, selectivity, and directionality | done |
+| 6 | Ion implantation | Gaussian dopant profile, masked by overlying films | |
+| 7 | CMP | Planarization, not just removal | done |
+| 8 | Recipe engine | Ordered operations loaded from a file | done |
+| 9 | Cross-section visualization | A picture after every step | done |
+| 10 | Process variability | Stochastic rates, nonuniformity, tool offsets | |
+| 11 | Link to Project 1 | Aerial image from the lithography simulator drives exposure | |
+| 12 | Metrology outputs | Thickness, CD, sidewall angle, step height | |
+| 13 | Statistics and yield | Monte Carlo over a recipe, spec limits, Cp/Cpk | |
 
 ## Design commitments
 
